@@ -11,7 +11,7 @@ The setup will serve as an environment for learning and experimenting with virtu
 
 **Hypervisor:** Proxmox
 
-**Container Orchestration:** Kubernetess
+**Container Orchestration:** Kubernetes
 
 **CI/CD:** ArgoCD
 
