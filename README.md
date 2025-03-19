@@ -22,3 +22,13 @@ The setup will serve as an environment for learning and experimenting with virtu
 **Secure reverse proxy:** Cloudflare zero trust tunnel
 
 **Secure Vault:** HashiCorp Vault
+
+## Hardware
+
+I'm using two mini pc and proxmox isnstalled on it to maximalize possibilities.
+
+Dell OptiPlex 7050 i5-6400T 12 Gb 512Gb ( 3 x masternode )
+
+Dell OptiPlex 7040 i5-6400T 24 Gb 1Tb ( 3 workernodes )
+
+Router Ubiquiti X-sfp router/firewall
