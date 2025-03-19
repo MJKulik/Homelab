@@ -1,7 +1,7 @@
 # Homelab Project
 
 **Overview:**
-This project sets up a home lab using Proxmox Virtualization, configured in a cluster. 
+This project contains all files to configure homelab k8s cluster and infrastructure in it.
 
 Installed Talos Linux, a secure and minimal OS, will be used to manage Kubernetes clusters, providing a streamlined and secure foundation for container orchestration. 
 
