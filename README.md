@@ -17,7 +17,7 @@ The setup will serve as an environment for learning and experimenting with virtu
 
 **Monitoring:** Prometheus, Grafana
 
-**Networking:** Calico
+**Networking:** Cilium
 
 **Secure reverse proxy:** Cloudflare zero trust tunnel
 
