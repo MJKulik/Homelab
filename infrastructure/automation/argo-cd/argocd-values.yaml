@@ -4,6 +4,7 @@ global:
   ## Used for ingresses, certificates, SSO, notifications, etc.
   # domain: home.mkdevops.online
 
+server:
 ## Server service configuration
   service:
     # -- Server service annotations
