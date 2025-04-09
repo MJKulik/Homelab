@@ -1,0 +1,74 @@
+## Globally shared configuration
+global:
+  # -- Default domain used by all components
+  ## Used for ingresses, certificates, SSO, notifications, etc.
+  # domain: home.mkdevops.online
+
+## Server service configuration
+  service:
+    # -- Server service annotations
+    # annotations: {}
+    # -- Server service labels
+    # labels: {}
+    # -- Server service type
+    type: NodePort
+    # -- Server service http port for NodePort service type (only if `server.service.type` is set to "NodePort")
+    nodePortHttp: 30001
+    # -- Server service https port for NodePort service type (only if `server.service.type` is set to "NodePort")
+    nodePortHttps: 30002
+    # -- Server service http port
+    servicePortHttp: 80
+    # -- Server service https port
+    servicePortHttps: 443
+    # -- Server service http port name, can be used to route traffic via istio
+    servicePortHttpName: http
+    # -- Server service https port name, can be used to route traffic via istio
+    servicePortHttpsName: https
+    # -- Server service https port appProtocol
+    ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol
+    # servicePortHttpsAppProtocol: ""
+    # -- The class of the load balancer implementation
+    # loadBalancerClass: ""
+    # -- LoadBalancer will get created with the IP specified in this field
+    # loadBalancerIP: ""
+    # -- Source IP ranges to allow access to service from
+    ## EKS Ref: https://repost.aws/knowledge-center/eks-cidr-ip-address-loadbalancer
+    ## GKE Ref: https://cloud.google.com/kubernetes-engine/docs/concepts/network-overview#limit-connectivity-ext-lb
+    # loadBalancerSourceRanges: []
+    # -- Server service external IPs
+    # externalIPs: []
+    # -- Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
+    ## Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
+    externalTrafficPolicy: Cluster
+    # -- Used to maintain session affinity. Supports `ClientIP` and `None`
+    ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
+    # sessionAffinity: None
+
+  # Argo CD server ingress configuration
+  # ingress:
+    # -- Enable an ingress resource for the Argo CD server
+    # enabled: true
+    
+    # -- Additional ingress annotations
+    ## Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/#option-1-ssl-passthrough
+    # annotations:
+      # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    
+    # -- Defines which ingress controller will implement the resource
+    # ingressClassName: "nginx"
+    
+    # -- The path to Argo CD server
+    # path: "/argocd"
+
+    # -- Ingress path type. One of `Exact`, `Prefix` or `ImplementationSpecific`
+    # pathType: Prefix
+
+## ApplicationSet controller
+# applicationSet:
+  # -- ApplicationSet controller name string
+  # name: root-applicationSet
+
+
+
+
