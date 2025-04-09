@@ -8,12 +8,17 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   project: dev
-  source:
-    path: infrastructure
-    repoURL: https://github.com/MJKulik/Homelab.git
-    targetRevision: main
-    directory:
-      recurse: true
+  sources:
+    - repoURL: https://github.com/MJKulik/Homelab.git
+      targetRevision: main
+      path: infrastructure/monitoring
+      directory:
+        recurse: true
+    - repoURL: https://github.com/MJKulik/Homelab.git
+      targetRevision: main
+      path: infrastructure/networking
+      directory:
+        recurse: true
   syncPolicy:
     automated:
       allowEmpty: true
