@@ -1,5 +1,5 @@
 ## Globally shared configuration
-global:
+# global:
   # -- Default domain used by all components
   ## Used for ingresses, certificates, SSO, notifications, etc.
   # domain: home.mkdevops.online
@@ -8,9 +8,9 @@ server:
 ## Server service configuration
   service:
     # -- Server service annotations
-    # annotations: {}
+    annotations: {}
     # -- Server service labels
-    # labels: {}
+    labels: {}
     # -- Server service type
     type: NodePort
     # -- Server service http port for NodePort service type (only if `server.service.type` is set to "NodePort")
@@ -37,7 +37,7 @@ server:
     ## GKE Ref: https://cloud.google.com/kubernetes-engine/docs/concepts/network-overview#limit-connectivity-ext-lb
     # loadBalancerSourceRanges: []
     # -- Server service external IPs
-    # externalIPs: []
+    externalIPs: []
     # -- Denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints
     ## Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
     externalTrafficPolicy: Cluster
