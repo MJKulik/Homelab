@@ -13,11 +13,15 @@ The setup will serve as an environment for learning and experimenting with virtu
 
 **Container Orchestration:** Kubernetes
 
-**CI/CD:** ArgoCD
+**CI:** Github Actions
+
+**CD:** ArgoCD
 
 **Monitoring:** Prometheus, Grafana
 
 **Networking:** Cilium
+
+**DNS:** Bind9 or Pihole
 
 **Secure reverse proxy:** Cloudflare zero trust tunnel
 
