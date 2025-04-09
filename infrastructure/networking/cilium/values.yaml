@@ -4,7 +4,7 @@ ipam:
   mode: "kubernetes"
 
 # Replace default kube-proxy
-kubeProxyReplacement: true
+kubeProxyReplacement: strict
 
 # -- (string) Kubernetes service host - use "auto" for automatic lookup from the cluster-info ConfigMap
 k8sServiceHost: "localhost"
