@@ -8,10 +8,10 @@ kubeProxyReplacement: true
 
 # -- (string) Kubernetes service host - use "auto" for automatic lookup from the cluster-info ConfigMap
 # localhost wont work after pure installation cuz coreDNS pending state use IP and proper port
-k8sServiceHost: "10.220.0.11"
+k8sServiceHost: "localhost"
 
 # -- (string) Kubernetes service port
-k8sServicePort: "6443"
+k8sServicePort: "7445"
 
 # -- Configure cgroup related configuration
 cgroup:
