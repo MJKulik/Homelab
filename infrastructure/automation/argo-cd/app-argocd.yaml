@@ -17,9 +17,6 @@ spec:
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
     ref: values
-  - repoURL: https://github.com/MJKulik/Homelab.git
-    targetRevision: main
-    path: infrastructure/automation/argo-cd/config
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argocd
