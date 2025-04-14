@@ -13,7 +13,7 @@ spec:
       releaseName: cilium
       valueFiles:
       - values.yaml
-      ignoreMissingValueFiles: true
+    #   ignoreMissingValueFiles: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
