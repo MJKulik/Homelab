@@ -19,6 +19,11 @@ spec:
       path: infrastructure/networking
       directory:
         recurse: true
+    - repoURL: https://github.com/MJKulik/Homelab.git
+      targetRevision: main
+      path: infrastructure/security
+      directory:
+        recurse: true
   syncPolicy:
     automated:
       allowEmpty: true
