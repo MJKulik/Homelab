@@ -10,7 +10,7 @@ spec:
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: 6.29.0
     helm:
-      releaseName: loki
+      releaseName: grafana/loki
       valueFiles:
       - $values/infrastructure/monitoring/loki/values.yaml
       ignoreMissingValueFiles: true
