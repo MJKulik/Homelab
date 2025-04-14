@@ -13,7 +13,7 @@ spec:
       releaseName: cilium
       valueFiles:
       - $values/infrastructure/networking/cilium/values.yaml
-    #   ignoreMissingValueFiles: true
+      ignoreMissingValueFiles: true
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
     ref: values
