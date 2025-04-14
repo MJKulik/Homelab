@@ -5,15 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: dev
-  source:
-    chart: cilium
+  sources:
+  - chart: cilium
     repoURL: https://helm.cilium.io/
     targetRevision: 1.17.2
     helm:
       releaseName: cilium
       valueFiles:
-      - ./cilium-values.yaml
+      - $values/infrastructure/networking/cilium/cilium-values.yaml
     #   ignoreMissingValueFiles: true
+  - repoURL: 'https://github.com/MJKulik/Homelab.git'
+    targetRevision: main
+    ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
@@ -21,3 +24,5 @@ spec:
   #   automated:
   #     prune: true
   #     selfHeal: true
+  source:
+    path: cilium
