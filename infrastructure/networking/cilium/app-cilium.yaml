@@ -12,11 +12,10 @@ spec:
     helm:
       releaseName: cilium
       valueFiles:
-      - $values/cilium-values.yaml
+      - $values/infrastructure/networking/cilium/cilium-values.yaml
     #   ignoreMissingValueFiles: true
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
-    path: /infrastructure/networking/cilium/
     ref: values
   destination:
     server: "https://kubernetes.default.svc"
