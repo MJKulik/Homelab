@@ -43,3 +43,6 @@ terraform.rc
 private
 talosconfig
 kubeconfig
+
+#Ignore rock-ceph consumed too many resources 
+infrastructure/storage/rook-ceph
