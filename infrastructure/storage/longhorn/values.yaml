@@ -1,0 +1,19 @@
+service:
+  ui:
+    # -- Service type for Longhorn UI. (Options: "ClusterIP", "NodePort", "LoadBalancer", "Rancher-Proxy")
+    type: NodePort
+   
+    # -- NodePort port number for Longhorn UI. When unspecified, Longhorn selects a free port between 30000 and 32767.
+    nodePort: 30021
+
+# Longhorn system settings (defaultSettings block configures values as in Longhorn UI)
+defaultSettings:
+
+  # Whether to prefer keeping a replica on the same node as the pod
+  defaultDataLocality: best-effort
+
+  # What to do with pods using Longhorn volumes when node is down
+  # nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+
+  # Default StorageClass used for static provisioning of PVs
+  defaultLonghornStaticStorageClass: longhorn
