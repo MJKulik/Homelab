@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflare-tunnel
+  namespace: argocd
+spec:
+  project: dev
+  sources:
+  - chart: cloudflare-tunnel
+    repoURL: https://cloudflare.github.io/helm-charts
+    targetRevision: 0.15.1
+    helm:
+      releaseName: cloudflare-tunnel
+      valueFiles:
+      - $values/infrastructure/security/cloudflare-tunnel/values.yaml
+      ignoreMissingValueFiles: true
+  - repoURL: https://github.com/MJKulik/Homelab.git
+    targetRevision: main
+    ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: cloudflare-tunnel
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
