@@ -11,6 +11,9 @@ spec:
   sources:
     - repoURL: https://github.com/MJKulik/Homelab.git
       targetRevision: main
+      path: apps
+    - repoURL: https://github.com/MJKulik/Homelab.git
+      targetRevision: main
       path: infrastructure/monitoring
       directory:
         recurse: true
