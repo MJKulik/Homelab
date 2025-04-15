@@ -27,6 +27,9 @@ spec:
     - repoURL: https://github.com/MJKulik/Homelab.git
       targetRevision: main
       path: infrastructure/automation
+    - repoURL: https://github.com/MJKulik/Homelab.git
+      targetRevision: main
+      path: infrastructure/storage
       directory:
         recurse: true
   syncPolicy:
