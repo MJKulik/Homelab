@@ -5,7 +5,10 @@
   # domain: home.mkdevops.online
 
 server:
-## Server service configuration
+  # -- The number of server pods to run
+  replicas: 2
+
+  ## Server service configuration
   service:
     # -- Server service annotations
     annotations: {}
@@ -44,7 +47,7 @@ server:
     # -- Used to maintain session affinity. Supports `ClientIP` and `None`
     ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     # sessionAffinity: None
-
+ 
   # Argo CD server ingress configuration
   # ingress:
     # -- Enable an ingress resource for the Argo CD server
@@ -65,10 +68,20 @@ server:
     # -- Ingress path type. One of `Exact`, `Prefix` or `ImplementationSpecific`
     # pathType: Prefix
 
-## ApplicationSet controller
-# applicationSet:
-  # -- ApplicationSet controller name string
-  # name: root-applicationSet
+## Application controller
+controller:
+
+  # -- The number of application controller pods to run.
+  # Additional replicas will cause sharding of managed clusters across number of replicas.
+  ## With dynamic cluster distribution turned on, sharding of the clusters will gracefully
+  ## rebalance if the number of replica's changes or one becomes unhealthy. (alpha)
+  replicas: 2
+
+## Repo Server
+repoServer:
+
+  # -- The number of repo server pods to run
+  replicas: 1
 
 
 
