@@ -16,7 +16,7 @@ spec:
       ignoreMissingValueFiles: true
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
-    path: infrastructure/storage/rook-ceph/namespace.yaml
+    path: infrastructure/storage/rook-ceph
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
     ref: values
