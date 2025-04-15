@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rook-ceph
+  name: rook-ceph-cluster
   namespace: argocd
 spec:
   project: default
@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: rook-ceph-cluster
       valueFiles:
-      - $values/infrastructure/storage/rook-ceph/values.yaml
+      - $values/infrastructure/storage/rook-ceph/cluster-values.yaml
       ignoreMissingValueFiles: true
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
