@@ -16,9 +16,6 @@ spec:
       ignoreMissingValueFiles: true
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
-    path: infrastructure/storage
-  - repoURL: https://github.com/MJKulik/Homelab.git
-    targetRevision: main
     ref: values
   destination:
     server: https://kubernetes.default.svc
