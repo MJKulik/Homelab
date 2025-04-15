@@ -7,13 +7,16 @@ spec:
   project: default
   sources:
   - repoURL: https://charts.rook.io/release
-    chart: rook-ceph-cluster
+    chart: rook-ceph
     targetRevision: 1.16.6
     helm:
       releaseName: rook-ceph
       valueFiles:
       - $values/infrastructure/storage/rook-ceph/values.yaml
       ignoreMissingValueFiles: true
+  - repoURL: https://github.com/MJKulik/Homelab.git
+    targetRevision: main
+    path: infrastructure/storage/rook-ceph/namespace.yaml
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
     ref: values
@@ -24,5 +27,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-    syncOptions:
-      - CreateNamespace=true
