@@ -27,6 +27,9 @@ The setup will serve as an environment for learning and experimenting with virtu
 
 **Secure Vault:** HashiCorp Vault
 
+**Storage:** Longhorn
+
+
 ## Hardware
 
 I'm using two mini pc and proxmox isnstalled on it to maximalize possibilities.
