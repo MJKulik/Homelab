@@ -11,4 +11,4 @@ preUpgradeChecker:
   jobEnabled: false
 
 # -- Setting that allows you to enable pod security policies (PSPs) that allow privileged Longhorn pods to start. This setting applies only to clusters running Kubernetes 1.25 and earlier, and with the built-in Pod Security admission controller enabled.
-enablePSP: false
+enablePSP: true
