@@ -17,6 +17,9 @@ spec:
   - repoURL: https://github.com/MJKulik/Homelab.git
     targetRevision: main
     ref: values
+  - repoURL: https://github.com/MJKulik/Homelab.git
+    targetRevision: main
+    path: infrastructure/storage/longhorn/config
   destination:
     server: https://kubernetes.default.svc
     namespace: longhorn-system
