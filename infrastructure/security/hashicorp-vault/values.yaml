@@ -1,5 +1,5 @@
 server:
-  dev:
+  standalone:
     enabled: true
 # This configures the volume used for storing Vault data when not using external storage such as Consul.
 dataStorage:
