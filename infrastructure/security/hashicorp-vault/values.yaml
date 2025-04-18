@@ -1,3 +1,13 @@
 server:
   dev:
     enabled: true
+# This configures the volume used for storing Vault data when not using external storage such as Consul.
+dataStorage:
+  #  Enables a persistent volume to be created for storing Vault data when not using an external storage service.
+  enabled: true
+  # Size of the volume to be created for Vault's data storage when not using an external storage service.
+  size: 8G
+  # Name of the storage class to use when creating the data storage volume.
+  storageClass: Longhorn
+  # Access Mode of the storage device being used for the PVC
+  accessMode: ReadWriteOnce
