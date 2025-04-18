@@ -8,6 +8,6 @@ dataStorage:
   # Size of the volume to be created for Vault's data storage when not using an external storage service.
   size: 8G
   # Name of the storage class to use when creating the data storage volume.
-  storageClass: Longhorn
+  storageClass: longhorn
   # Access Mode of the storage device being used for the PVC
   accessMode: ReadWriteOnce
