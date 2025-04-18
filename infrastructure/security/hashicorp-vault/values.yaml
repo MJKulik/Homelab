@@ -6,8 +6,21 @@ dataStorage:
   #  Enables a persistent volume to be created for storing Vault data when not using an external storage service.
   enabled: true
   # Size of the volume to be created for Vault's data storage when not using an external storage service.
-  size: 8G
+  size: 8Gi
   # Name of the storage class to use when creating the data storage volume.
   storageClass: longhorn
   # Access Mode of the storage device being used for the PVC
   accessMode: ReadWriteOnce
+  # Configures the path in the Vault pod where the audit storage will be mounted.
+  mountPath: /vault/data
+auditStorage:
+  #  Enables a persistent volume to be created for storing Vault data when not using an external storage service.
+  enabled: true
+  # Size of the volume to be created for Vault's data storage when not using an external storage service.
+  size: 8Gi
+  # Name of the storage class to use when creating the data storage volume.
+  storageClass: longhorn
+  # Access Mode of the storage device being used for the PVC
+  accessMode: ReadWriteOnce
+  # Configures the path in the Vault pod where the audit storage will be mounted.
+  mountPath: /vault/audit
