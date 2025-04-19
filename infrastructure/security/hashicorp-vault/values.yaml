@@ -2,6 +2,7 @@ server:
    affinity: ""
    ha:
      enabled: true
+     replicas: 3
      raft: 
        enabled: true
        setNodeId: true
@@ -17,6 +18,16 @@ server:
                tls_disable = "true"
             }
             service_registration "kubernetes" {}
+
+# For HA configuration and because we need to manually init the vault,
+  # we need to define custom readiness/liveness Probe settings
+readinessProbe:
+  enabled: true
+  path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
+livenessProbe:
+  enabled: true
+  path: "/v1/sys/health?standbyok=true"
+  initialDelaySeconds: 60
 
 # This configures the volume used for storing Vault data when not using external storage such as Consul.
 dataStorage:
@@ -41,3 +52,9 @@ auditStorage:
   accessMode: ReadWriteOnce
   # Configures the path in the Vault pod where the audit storage will be mounted.
   mountPath: /vault/audit
+# Vault UI
+ui:
+  enabled: true
+  serviceType: "LoadBalancer"
+  serviceNodePort: null
+  externalPort: 8200
