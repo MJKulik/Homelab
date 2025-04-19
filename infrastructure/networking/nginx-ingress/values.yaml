@@ -1,6 +1,0 @@
-controller: 
-  service:
-    # -- List of node IP addresses at which the external controller service is available.
-    # Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips
-    externalIPs:
-      - 10.230.0.11

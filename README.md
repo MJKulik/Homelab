@@ -17,7 +17,7 @@ The setup will serve as an environment for learning and experimenting with virtu
 
 **CD:** ArgoCD
 
-**Monitoring:** Prometheus, Grafana
+**Monitoring:** Grafana, Prometheus
 
 **Networking:** Cilium
 
@@ -26,6 +26,8 @@ The setup will serve as an environment for learning and experimenting with virtu
 **Secure reverse proxy:** Cloudflare zero trust tunnel
 
 **Secure Vault:** HashiCorp Vault
+
+**Managing certificates:** cert-manager
 
 **Storage:** Longhorn
 

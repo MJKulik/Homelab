@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cilium
+  namespace: argocd
+spec:
+  project: dev
+  sources:
+  - chart: traefik
+    repoURL: https://traefik.github.io/charts
+    targetRevision: 35.0.1
+    helm:
+      releaseName: traefik
+      valueFiles:
+      - $values/infrastructure/networking/traefik/values.yaml
+      ignoreMissingValueFiles: true
+  - repoURL: https://github.com/MJKulik/Homelab.git
+    targetRevision: main
+    ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
