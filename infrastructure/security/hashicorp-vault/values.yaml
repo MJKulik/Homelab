@@ -1,6 +1,23 @@
 server:
-  standalone:
-    enabled: true
+   affinity: ""
+   ha:
+     enabled: true
+     raft: 
+       enabled: true
+       setNodeId: true
+       config: |
+            cluster_name = "vault-integrated-storage"
+            storage "raft" {
+               path    = "/vault/data/"
+            }
+
+            listener "tcp" {
+               address = "[::]:8200"
+               cluster_address = "[::]:8201"
+               tls_disable = "true"
+            }
+            service_registration "kubernetes" {}
+
 # This configures the volume used for storing Vault data when not using external storage such as Consul.
 dataStorage:
   #  Enables a persistent volume to be created for storing Vault data when not using an external storage service.
