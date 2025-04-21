@@ -1,5 +1,48 @@
+# -- Global command arguments to be passed to all traefik's pods
+globalArguments:
+- "--global.checknewversion=false"
+- "--global.sendanonymoususage=false"
+
+# Use curly braces to pass values: `helm install --set="additionalArguments={--providers.kubernetesingress.ingressclass=traefik-internal,--log.level=DEBUG}"`
+additionalArguments:
+- "--serversTransport.insecureSkipVerify=true"
+- "--log.level=INFO"
+
 deployment:
   # -- Enable deployment
   enabled: true
-  # -- Deployment or DaemonSet
-  kind: Deployment
+  # -- Number of pods of the deployment (only applies when kind == Deployment)
+  replicas: 3
+  
+ports:
+  web:
+    redirectTo: websecure
+  websecure:
+    tls:
+      enabled: true
+      
+ingressRoute:
+  dashboard:
+    enabled: false
+
+providers:
+  kubernetesCRD:
+    enabled: true
+    ingressClass: traefik
+  kubernetesIngress:
+    enabled: true
+    publishedService:
+      enabled: false
+
+rbac:
+  enabled: true
+
+service:
+  enabled: true
+  type: LoadBalancer
+  annotations: {}
+  labels: {}
+  spec:
+    loadBalancerIP: 10.0.11.11 # this should be an IP in the cilium ingress range
+  loadBalancerSourceRanges: []
+  externalIPs: []
