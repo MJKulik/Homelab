@@ -5,5 +5,3 @@ metadata:
 spec:
   cidrs:
     - cidr: 10.0.11.0/24
-    - start: "10.0.11.11"
-      stop: "10.0.11.253"
