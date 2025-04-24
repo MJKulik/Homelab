@@ -7,7 +7,6 @@
 server:
   # -- The number of server pods to run
   replicas: 2
-
   ## Server service configuration
   service:
     # -- Server service annotations
@@ -70,7 +69,6 @@ server:
 
 ## Application controller
 controller:
-
   # -- The number of application controller pods to run.
   # Additional replicas will cause sharding of managed clusters across number of replicas.
   ## With dynamic cluster distribution turned on, sharding of the clusters will gracefully
@@ -79,10 +77,16 @@ controller:
 
 ## Repo Server
 repoServer:
-
   # -- The number of repo server pods to run
   replicas: 1
 
-
-
+## Argo Configs
+configs:
+  # Argo CD configuration parameters
+  ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cmd-params-cm.yaml
+  params:
+    ## Server properties
+    # -- Run server without TLS
+    ## NOTE: This value should be set when you generate params by other means as it changes ports used by ingress template.
+    server.insecure: true
 
