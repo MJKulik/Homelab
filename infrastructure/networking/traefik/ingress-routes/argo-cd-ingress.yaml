@@ -10,7 +10,7 @@ spec:
     - match: Host(`argocd.home.mkdevops.online`)
       kind: Rule
       services:
-        - name: argocd-server
+        - name: argo-cd-argocd-server
           port: 443
           scheme: https  # Important for ArgoCD since it uses TLS on the service
   tls:
