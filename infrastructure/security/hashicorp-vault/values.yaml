@@ -58,6 +58,10 @@ livenessProbe:
   enabled: true
   path: "/v1/sys/health?standbyok=true"
   initialDelaySeconds: 60
+# extraEnvironmentVars is a list of extra environment variables to set with the stateful set. These could be
+# used to include variables required for auto-unseal.
+extraEnvironmentVars:
+    VAULT_CACERT: /vault/userconfig/ca/ca.crt
 
 # This configures the volume used for storing Vault data when not using external storage such as Consul.
 dataStorage:
