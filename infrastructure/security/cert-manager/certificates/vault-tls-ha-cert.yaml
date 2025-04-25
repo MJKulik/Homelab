@@ -1,0 +1,28 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vault-tls
+  namespace: vault
+spec:
+  secretName: vault-tls  # <- Vault will mount this secret
+  duration: 2160h # 90 days, adjust as needed
+  renewBefore: 360h # 15 days
+  subject:
+    organizations:
+      - hashicorp
+  commonName: vault-internal
+  dnsNames:
+    - vault-internal
+    - vault
+    - vault.vault.svc
+    - hashicorp-vault.svc
+    - vault-0.vault-internal.vault.svc
+    - vault-1.vault-internal.vault.svc
+    - vault-2.vault-internal.vault.svc
+  issuerRef:
+    name: injector-ca-issuer  # <- Your CA Issuer
+    kind: Issuer
+    group: cert-manager.io
+  privateKey:
+    algorithm: ECDSA
+    size: 256
